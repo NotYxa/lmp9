@@ -32,3 +32,20 @@ int main(int argc, char ** argv) {
 
 	return 0;
 }
+
+Matrix* copyMatrix(Matrix *mat) {
+    if (mat == NULL)
+        return NULL;
+        
+    Matrix *copy = createMatrix(mat->r, mat->c);
+    if (copy == NULL)
+        return NULL;
+        
+    for (int i = 0; i < mat->r; i++) {
+        for (int j = 0; j < mat->c; j++) {
+            copy->data[i][j] = mat->data[i][j];
+        }
+    }
+    
+    return copy;
+}
